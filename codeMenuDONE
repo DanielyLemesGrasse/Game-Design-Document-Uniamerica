@@ -1,0 +1,69 @@
+#include<stdio.h>
+
+void Iniciar()
+{
+    printf("Jogo esta em desenvolvimento!\n");
+}
+
+void Config()
+{
+    printf("Em breve!!\n");
+}
+
+void Ranking()
+{
+    printf("Voce ainda nao tem rank!\n");
+}
+void Creditos()
+{
+    printf("Desenvolvedores: Daniely ,Hamada,Josue e Matheus\n");
+}
+
+void sair()
+{
+    printf("Ate logo...\n");
+}
+
+
+int main()
+{
+    int continuar=1;
+
+    do
+    {
+        printf("\n\Nibirus Attacks\n\n");
+        printf("1. Iniciar\n");
+        printf("2. Config\n");
+        printf("3. Ranking\n");
+        printf("4. Creditos\n");
+        printf("0. Sair\n");
+        scanf("%d", &continuar);
+        system("cls || clear");
+
+        switch(continuar)
+        {
+            case 1:
+                Iniciar();
+                break;
+
+            case 2:
+                Config();
+                break;
+
+            case 3:
+                Ranking();
+                break;
+
+                case 4:
+                Creditos();
+                break;
+
+            case 0:
+                sair();
+                break;
+
+            default:
+                printf("Digite uma opcao valida\n");
+        }
+    } while(continuar);
+}
