@@ -1,7 +1,9 @@
 #include<stdio.h>
+#include<locale.h>
 
 void Iniciar()
 {
+ setlocale(LC_ALL,"portuguese");
     printf("Jogo esta em desenvolvimento!\n");
 }
 
@@ -12,7 +14,7 @@ void Config()
 
 void Ranking()
 {
-    printf("Voce ainda nao tem rank!\n");
+    printf("Voce ainda não tem rank!\n");
 }
 void Creditos()
 {
@@ -21,7 +23,7 @@ void Creditos()
 
 void sair()
 {
-    printf("Ate logo...\n");
+    printf("Até logo...\n");
 }
 
 
@@ -35,7 +37,7 @@ int main()
         printf("1. Iniciar\n");
         printf("2. Config\n");
         printf("3. Ranking\n");
-        printf("4. Creditos\n");
+        printf("4. Créditos\n");
         printf("0. Sair\n");
         scanf("%d", &continuar);
         system("cls || clear");
