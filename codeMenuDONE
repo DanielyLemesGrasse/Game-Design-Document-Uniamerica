@@ -19,7 +19,7 @@ void Ranking()
 }
 void Creditos()
 {
-    printf("Desenvolvedores: Daniely ,Hamada,Josue e Matheus\n");
+    printf("Desenvolvedores: Daniely ,Hamada,Josue e André\n");
 }
 
 void sair()
