@@ -4,7 +4,6 @@
 #include <windows.h>
 #include <conio.h>
 #include <unistd.h>
-void textColor(int letras, int fundo);
 //COR DA LETRA
   enum{BLACK,                 //0
        BLUE,                  //1
