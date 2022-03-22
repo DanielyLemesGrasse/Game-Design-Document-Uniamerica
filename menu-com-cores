@@ -1,0 +1,165 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <windows.h>
+#include <conio.h>
+#include <unistd.h>
+void textColor(int letras, int fundo);
+//COR DA LETRA
+  enum{BLACK,                 //0
+       BLUE,                  //1
+       GREEN,                 //2
+       CYAN,                  //3
+       RED,                   //4
+       MAGENTA,               //5
+       DARKGRAY,              //8
+       LIGHTMAGENTA,          //13
+       YELLOW,                //14
+       WHITE                  //15
+
+       };
+  //COR DO FUNDO
+  enum{_BLACK=0,                 //0
+       };
+
+void textColor(int letra, int fundo){
+     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), letra + fundo);
+     }
+void iniciar() //Função onde vai rdoar o jogo
+
+{   int tecla;
+    do
+    {
+        textColor(BLUE,_BLACK);
+        system("cls");
+        printf("Jogo esta em desenvolvimento , volte em breve!");
+        printf("\n\nDigite 0 para retornar ao menu de opções.\n");
+        scanf("%d", &tecla);
+        if(tecla == 0) //Condição para voltar para o menu
+        {
+            return;
+        }
+        else
+        {
+            printf("\n\n Digite um comando válido\n");
+            system("pause");
+        }
+    } while(tecla != 0); //Jogo continua rodando enquanto a tecla de retorno nao for pressionada
+}
+
+void ranking()
+{
+    int tecla;
+    do
+    {
+        textColor(RED,_BLACK);
+        system("cls");
+        printf("\t\tRanking.");
+        printf("\n\n\tSem pontuação registrada.");
+        printf("\n\nDigite 0 para retornar ao menu de opções.\n");
+        scanf("%d", &tecla);
+        if(tecla == 0)
+        {
+            return;
+        }
+        else
+        {
+            printf("\n\nDigite um comando válido\n");
+            system("pause");
+        }
+    } while(tecla != 0);
+}
+
+void historia()
+{
+    int tecla;
+    do
+    {
+        textColor(YELLOW,_BLACK);
+        system("cls");
+        printf("\t\t\t\t\tHistoria do jogo\n\n");
+        printf("\tUm Ovni alienígena tem a missão de enfrentar os habitantes de um planeta\n");
+        printf("\tque vai se autodestruir para aniquilar com a natureza da via láctea, os\n");
+        printf("\thabitantes enfurecidos com a iniciativa deste ovni, estão bloqueando a rota\n");
+        printf("\tque dá acesso ao planeta, assim sendo está tendo uma guerra espacial\n");
+        printf("\tentre os nibirus e a espaçonave alienígena (Ovni).\n");
+        printf("\n\nDigite 0 para retornar ao menu de opções.\n");
+        scanf("%d", &tecla);
+        if(tecla == 0)
+        {
+            return;
+        }
+        else
+        {
+            printf("\n\nDigite um comando válido\n");
+            system("pause");
+        }
+    } while(tecla != 0);
+}
+
+void creditos()
+{
+    int tecla;
+    do
+    {
+        textColor(LIGHTMAGENTA,_BLACK);
+        system("cls");
+        printf("Desenvolvedores do jogo:");
+        printf("\n\n    Dany, Ahmad, Josué, André");
+        printf("\n\n\nDigite 0 para retornar ao menu de opções.\n");
+        scanf("%d", &tecla);
+        if(tecla == 0)
+        {
+            return;
+        }
+        else
+        {
+            printf("\n\nDigite um comando válido\n");
+            system("pause");
+        }
+    } while(tecla != 0);
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    int opcao;
+
+    do
+    {
+        textColor(GREEN, _BLACK);
+    system("cls");
+    printf("\n\t\t       NIBIRUS ATTACKS!"); //Mostra na tela o menu do jogo
+    printf("\n\n\t\t\t 1.Iniciar");
+    printf("\n\t\t\t 2.Ranking");
+    printf("\n\t\t\t 3.Sobre");
+    printf("\n\t\t\t 4.Créditos");
+    printf("\n\n\t\t\t 0.Sair\n\n\n");
+    scanf("%d", &opcao);
+    system("cls");
+
+    switch(opcao) //Determina o que ira ocorrer de acordo com o comando executado
+    {
+    case 1:     //Cada case chama sua respectiva função
+        iniciar();
+        break;
+    case 2:
+        ranking();
+        break;
+    case 3:
+        historia();
+        break;
+    case 4:
+        creditos();
+        break;
+    case 0:     //Case 0 não chama nenhuma função apenas sai do loop
+        break;
+    default:
+        printf("\nOpção invalida!\n\n");
+        system("pause");
+    }
+	}while (opcao != 0); //Continua no menu enquanto a tecla de saída não for pressionada
+
+	 return 0;
+	 }
