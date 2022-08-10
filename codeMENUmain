@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <stdio.h> 
 #include <stdlib.h>
-#include <locale.h>
-#include <windows.h>
+#include <locale.h> //Biblioteca que permite utilizar caracteres especiais do teclado em português
+#include <windows.h> //Biblioteca que define o tamanho da janela do compilador
 
 void textColor(int cor)   //Função para mudar a cor da letra
 {
